@@ -36,7 +36,7 @@ You're reading it!
 
 Here is an example of how to include an image in your writeup.
 
-![link and joint assignment](Robo_nd/Debug_error_eva.png)
+![link and joint assignment](Debug_error_eva.png)
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
