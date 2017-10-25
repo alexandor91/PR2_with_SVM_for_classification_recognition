@@ -14,13 +14,6 @@
 6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
 
 
-[//]: # (Image References)
-
-[image1]: 
-[image2]: ./joint_derivation
-[image3]: ./Debug_error_eva
-[image4]: ./Final_outcome
-
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -34,9 +27,9 @@ You're reading it!
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
-Here is an example of how to include an image in your writeup.
+Here is the image depicting the coordinate frame assignment for each link and joint.
 
-![link and joint assignment](Debug_error_eva.png)
+![link and joint assignment](transform_assignment.png)
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
@@ -114,7 +107,7 @@ Substitue the component in the matrix into the arctan function the last three an
             theta5 = atan2(sqrt(r33 * 33 + r13 * r13), r23)<br />
             theta6 = atan2(-r22, r21)<br />
 		
-![Theta angle about individual joint][image2]
+![Theta angle about individual joint](joint_derivation.png)
 
 ### Project Implementation
 
@@ -122,8 +115,9 @@ Substitue the component in the matrix into the arctan function the last three an
 
 At first, when the position is available from the request, from line 29 to line 72, firstly define the modified DH parameter, then define modified DH transform matrix, then create individual transform matrix for each joint, lastly extract rotation matrix from the transform matrix. All the invariant definations are defined outside the loop, 
 In the loop from line 76 to line 128, the inverse solution for the decoupled rotation and postion is calculated, the main strategy here is to substitute the corresponding value into the symbols, so the values are fed into the matrix directly to speed up the calculation.
-[Errors between FK and IK is analysed][image3]
+[Errors between FK and IK is analysed](Debug_error_eva.png)
+
 As the snapshot from image3 shows, the theta error for the individual joint is in acceptable range and the error increases with the accumulative error from theta1 to end effector, 
 The image4 shows the final result from top view, 8 success with only one failure in the whole 9 tests, the cylinder coulde be accurately place into the bin with approximately 90% successful rate, however, sometimes the cylinder is dropped onto the ground, this may be due to the angle solution, still not the best one, the further optimization should be focused on the finding the best solution, not reaching the limits for individual joint. E.g, the gripper (joint5 and joint6)should be rotated downwards to make sure the drop smoothly. 
-[The final outcome][image4]
+[The final outcome](Final_outcome.png)
 
