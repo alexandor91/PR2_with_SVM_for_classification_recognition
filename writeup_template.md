@@ -29,7 +29,7 @@ You're reading it!
 
 Here is the image depicting the coordinate frame assignment for each link and joint.
 
-![link and joint assignment](transform_assignment.png)
+![link and joint assignment](transform_assignment.jpg)
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
@@ -107,7 +107,7 @@ Substitue the component in the matrix into the arctan function the last three an
             theta5 = atan2(sqrt(r33 * 33 + r13 * r13), r23)<br />
             theta6 = atan2(-r22, r21)<br />
 		
-![Theta angle about individual joint](joint_derivation.png)
+![Theta angle about individual joint](joint_derivation.jpg)
 
 ### Project Implementation
 
@@ -119,5 +119,5 @@ In the loop from line 76 to line 128, the inverse solution for the decoupled rot
 
 As the snapshot from image3 shows, the theta error for the individual joint is in acceptable range and the error increases with the accumulative error from theta1 to end effector, 
 The image4 shows the final result from top view, 8 success with only one failure in the whole 9 tests, the cylinder coulde be accurately place into the bin with approximately 90% successful rate, however, sometimes the cylinder is dropped onto the ground, this may be due to the angle solution, still not the best one, the further optimization should be focused on the finding the best solution, not reaching the limits for individual joint. E.g, the gripper (joint5 and joint6)should be rotated downwards to make sure the drop-off smoothly. 
-[The final outcome](Final_outcome.png)
+[The final outcome](Final_outcome.jpg)
 
