@@ -118,7 +118,7 @@ def handle_calculate_IK(req):
 
             TF3_6 = TF0_3.inv("LU") * Rotation_7
             #Extract the euler angles from the rotation matrix, take into account the constraint at the initial positons and end possitions
-            if x<1 or x>(len(req.poses)-1):   #the gripper should be rotated to the desired angle in order to avoid collision.
+            if x<2 or x>(len(req.poses)-2):   #the gripper should be rotated to the desired angle in order to avoid collision.
                theta4 = atan2(TF3_6[2,2], -TF3_6[0,2])
                theta5 = atan2(sqrt(TF3_6[0,2] * TF3_6[0,2] + TF3_6[2,2] * TF3_6[2,2]), TF3_6[1,2])
                theta6 = atan2(-TF3_6[1,1], TF3_6[1,0])
