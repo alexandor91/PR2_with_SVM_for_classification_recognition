@@ -34,6 +34,9 @@ Use "compute_color_histograms()" and "compute_normal_histograms()" function from
 ![Confusion_matrxi_scene2](Norm_confusion_matrix_scene2.png)
 
 ![Confusion_matrxi_scene3](Norm_confusion_matrix_scene3.png)
+&thinsp; = 1 x &nbsp;
+&ensp; = 2 x &nbsp;
+&emsp; = 2 x &ensp; = 4 x &nbsp;
 
 ## Implementation in project environment		
 The pipeline is same as above and an additional step is added for the filtering out the noise points using statistical method . Then the core part of the recognition is done within a nested loop, the outside loop is incremented with the object enumeration in the pickup list, in the inner loop the compare, between the recognized object in cluster cloud and the one in pickup list is run, to check if the recognized object is right there and then calculate the centroid of the target, which will be used for pick and place task.
