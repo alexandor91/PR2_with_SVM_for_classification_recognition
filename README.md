@@ -30,6 +30,7 @@ The clustered point clouds are stored in [table_scene_lms400_outliers.pcd]
 ### 1. Run the recognition pipeline
 Use "compute_color_histograms()" and "compute_normal_histograms()" function from the capture_features module and then the feasture vector is obtained and can be used as the training set for svm, for the 3 world's scenes with 3 different pickup lists, then the svm should load accordingly the right dataset, then the normalized confusion matrix is presented as in
 ![Confusion_matrxi_scene1](Norm_confusion_matrix_scene1.png)
+&thinsp; = 1 x &nbsp;
  &nbsp   Confusion_matrxi_scene1<br  /> 
 ![Confusion_matrxi_scene2](Norm_confusion_matrix_scene2.png)
 
