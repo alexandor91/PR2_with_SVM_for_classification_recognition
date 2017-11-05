@@ -44,7 +44,7 @@ The outcome is quite good, in scene 1 and scene 2, all objects are recognized co
 ![recognized_marker world2](rviz_screenshot_world2.png)
 <br />&emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp;&emsp; &emsp;  &emsp;  &emsp;recognized_marker world2
 ![recognized_marker world3](rviz_screenshot_world3.png)
-<br />&emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp;&emsp; &emsp;  &emsp;  &emsp;recognized_marker world3
+<br />&emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp; &emsp; &emsp;  &emsp;  &emsp;&emsp; &emsp;  &emsp;  &emsp;recognized_marker world3<br />
 And each set of parameters for the recognized object is aslo stored into the dictionary and forwarded to the yaml file,[output_1.yaml] ,[output_2.yaml], [output_3.yaml] 
 The request for the pick and place information is commented out because I do want to make the infomation in my termial clean without the red error promption.
 I think if the robot coud rotate a little, then the occluded object will be found again, so the command to the joint should be added in the futrue to solve the problem in scene3
