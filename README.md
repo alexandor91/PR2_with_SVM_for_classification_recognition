@@ -1,10 +1,6 @@
 # Robo_nd Project3 3D Perception
 
 ---
-## Project: Kinematics Pick & Place
-
----
-
 
 **Steps to complete the project:**  
 
