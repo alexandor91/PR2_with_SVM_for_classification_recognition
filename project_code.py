@@ -1,5 +1,12 @@
 #!/usr/bin/env python
-
+#     License:BSD
+#     This file scanner.py is to perform scanning from fixed    locations, when this node is launched, then the locations should be passed via rosservice command in another terminal, the "number" of positions and the "coordinate" should be passed through terminal to the node, then the scanning process at each location will be repeated untils the end of scanning
+#
+#    Maintainer: Alexander.Kang
+#
+#    Email: alexander.kang@tum.de
+#
+#    Date: 11.02.2018
 # Import modules
 import numpy as np
 import sklearn
